@@ -44,6 +44,6 @@ private final class DispatchQueueExecutor: SerialExecutor {
     }
 }
 
-#if os(Linux)
+#if os(Linux) || os(Android)
     extension DispatchQueueExecutor: @unchecked Sendable {}
 #endif
