@@ -1619,7 +1619,7 @@ try Int.fetchOne(db, request) // Int?
 To access the C SQLite functions from SQLCipher or the system SQLite, you need to perform an extra import:
 
 ```swift
-import SQLite3   // System SQLite
+import SQLCipher   // System SQLite
 import SQLCipher // SQLCipher
 
 let sqliteVersion = String(cString: sqlite3_libversion())

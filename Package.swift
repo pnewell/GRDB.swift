@@ -17,7 +17,9 @@ var swiftSettings: [SwiftSetting] = [
     .define("SQLITE_ENABLE_SNAPSHOT"),
 ]
 var cSettings: [CSetting] = []
-var dependencies: [PackageDescription.Package.Dependency] = []
+var dependencies: [PackageDescription.Package.Dependency] = [
+    .package(url: "https://github.com/skiptools/swift-sqlcipher.git", from: "1.7.1")
+]
 
 // Don't rely on those environment variables. They are ONLY testing conveniences:
 // $ SQLITE_ENABLE_PREUPDATE_HOOK=1 make test_SPM
@@ -46,19 +48,20 @@ let package = Package(
         .watchOS(.v7),
     ],
     products: [
-        .library(name: "GRDBSQLite", targets: ["GRDBSQLite"]),
+//        .library(name: "GRDBSQLite", targets: ["GRDBSQLite"]),
         .library(name: "GRDB", targets: ["GRDB"]),
         .library(name: "GRDB-dynamic", type: .dynamic, targets: ["GRDB"]),
     ],
     dependencies: dependencies,
     targets: [
-        .systemLibrary(
-            name: "GRDBSQLite",
-            providers: [.apt(["libsqlite3-dev"])]),
+//        .systemLibrary(
+//            name: "GRDBSQLite",
+//            providers: [.apt(["libsqlite3-dev"])]),
         .target(
             name: "GRDB",
             dependencies: [
-                .target(name: "GRDBSQLite"),
+//                .target(name: "GRDBSQLite"),
+                .product(name: "SQLCipher", package: "swift-sqlcipher")
             ],
             path: "GRDB",
             resources: [.copy("PrivacyInfo.xcprivacy")],

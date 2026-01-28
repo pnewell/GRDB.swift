@@ -7,7 +7,7 @@
 
 import UIKit
 import GRDB
-import SQLite3
+import SQLCipher
 
 class ViewController: UIViewController {
     

@@ -1,6 +1,6 @@
 import Cocoa
 import GRDB
-import SQLite3
+import SQLCipher
 
 @main
 class AppDelegate: NSObject, NSApplicationDelegate {

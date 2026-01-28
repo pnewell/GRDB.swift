@@ -1,6 +1,6 @@
 import UIKit
 import GRDB
-import SQLite3
+import SQLCipher
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {

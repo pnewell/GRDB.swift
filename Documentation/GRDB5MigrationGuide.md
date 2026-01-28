@@ -466,7 +466,7 @@ let publisher = observation
     // BEFORE: GRDB 4
     import CSQLite   // When GRDB is included with the Swift Package Manager
     import SQLCipher // When GRDB is linked to SQLCipher
-    import SQLite3   // When GRDB is linked to System SQLite
+    import SQLCipher   // When GRDB is linked to System SQLite
     let sqliteVersion = String(cString: sqlite3_libversion())
 
     // NEW: GRDB 5

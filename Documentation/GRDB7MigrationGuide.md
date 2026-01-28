@@ -214,7 +214,7 @@ In GRDB 7, you may need an additional import, depending on how GRDB is integrate
 - If your app uses the GRDB Swift Package Manager (SPM) package:
 
     ```swift
-    import SQLite3
+    import SQLCipher
 
     let sqliteVersion = sqlite3_libversion_number()
     ```
